@@ -1,0 +1,5 @@
+-------------------------------------------------
+Conversion tables to convert raw to scaled scores
+-------------------------------------------------
+
+This conversion table consists of the following columns:

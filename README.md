@@ -4,7 +4,7 @@
 
 ## Introduction - AIMS VUB
 
-First of all, thank you very much for your interest in using our project on behalf of the Artificial Intelligence and Modelling in clinical Sciences (AIMS) lab, part of the Vrije Universiteit Brussel (VUB). We aim to contribute maximally to optimal clinical care in neurodegenerative disorders, with a special focus on Multiple Sclerosis, by performing relevant and advanced modelling on neurophysiological and brain imaging data. Moreover, in light of the prosper of the field and general understanding of our research, we do efforts to contribute to open, reproducible and transparant science by sharing code and actively practicing science communication on our [AIMS website]('Insert website').
+First of all, thank you very much for your interest in using our project on behalf of the Artificial Intelligence and Modelling in clinical Sciences (AIMS) lab, part of the Vrije Universiteit Brussel (VUB). We aim to contribute maximally to optimal clinical care in neurodegenerative disorders, with a special focus on Multiple Sclerosis, by performing relevant and advanced modelling on neurophysiological and brain imaging data. Moreover, in light of the prosper of the field and general understanding of our research, we do efforts to contribute to open, reproducible and transparant science by sharing code and actively practicing science communication on our [AIMS website]().
 
 ## Introduction - The project
 
@@ -23,4 +23,15 @@ The regression-based norms allow a raw score on any of the 3 cognitive tests sta
 In short, by correcting for these 3 factors, the resulting z-score can be compared to cognitive scores without interference by them. In the following section, we explain the code that performs exactly this transformation.
 
 ## Repo explanation
+
+1. Class `Database` from mock_data.py: 
+   1. `description`: if you `print` this attribute, it gives a description of the mock data that you can use to test the code.
+   2. `data`: contains the actual mock data.
+
+2. Class `Functions` from functions.py
+   1. `function 1`
+   2. `function 2`
+   3. `function 3`
+
+
 

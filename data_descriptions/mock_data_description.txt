@@ -1,0 +1,15 @@
+---------------------------------------------
+Mock dataset for z-normalisation illustration
+---------------------------------------------
+
+This is artificially generated mock data, consisting of ... examples and ... columns.
+The columns consist of the following features:
+1. age: age in years
+2. age_squared
+3. sex: 'm', 'f'
+4. education: Amount of years education
+    - 12 years: Finished high school
+    - 15 years: BSc
+    - 17 years: MSc
+    - 21 years: PhD
+5. sdmt_raw: raw sdmt score to be normalised with respect to the Belgian, Dutch-speaking reference population

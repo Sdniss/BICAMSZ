@@ -3,3 +3,8 @@
 BPAD_virtual_env/
  __pycache__/
 Visualizations/
+data/mockdata.csv
+data/bvmt_conversion_table.csv
+data/cvlt_conversion_table.csv
+sdmt_conversion_table.csv
+__pycache__/
