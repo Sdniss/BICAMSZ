@@ -1,13 +1,17 @@
 import pandas as pd
 
 
-class MockData:
+class InputData:
 
     def __init__(self):
 
         # Read relevant files
-        data = pd.read_csv('data/mockdata.csv')
+        data = pd.read_csv('data/data_to_transform.csv')
         description = open('data_descriptions/mock_data_description.txt', 'r')
+
+        # add age^2 column as second column to the data
+        age_2 = data['age']**2
+        data.insert(loc=1, column='age^2', value=age_2)  # insert age^2 column in second position (thus loc = 1)
 
         # Create the attributes
         self.data_all = data

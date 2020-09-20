@@ -1,14 +1,14 @@
-from load_data import MockData
+from load_data import InputData
 from load_data import ConversionTable
 from functions import normalization_pipeline
 import pandas as pd
 
 # Load the mock data
-all_data = MockData().data_all
-demographics = MockData().demographics
-sdmt_raw = MockData().sdmt_raw
-bvmt_raw = MockData().bvmt_raw
-cvlt_raw = MockData().cvlt_raw
+all_data = InputData().data_all
+demographics = InputData().demographics
+sdmt_raw = InputData().sdmt_raw
+bvmt_raw = InputData().bvmt_raw
+cvlt_raw = InputData().cvlt_raw
 
 # Load the conversion tables
 sdmt_conv_table = ConversionTable().sdmt
@@ -16,7 +16,7 @@ bvmt_conv_table = ConversionTable().bvmt
 cvlt_conv_table = ConversionTable().cvlt
 
 # Print the descriptions of the data
-print(MockData().description)
+print(InputData().description)
 print(ConversionTable().description)
 
 # Calculate all z-scores (and binary scores (impaired / preserved)) for all tests and all subjects
