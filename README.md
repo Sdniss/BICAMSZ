@@ -34,6 +34,18 @@ The project adopts the following file structure:
 
    1. Data (`load_data.py`). Location of the data and description in the "data" and "data_descriptions" folder respectively.
 
+      - class `InputData`: the input data to be transformed
+
+        Attributes:
+
+        - `data_all`: all input data
+        - `demographics`: subset of input data, 'age', 'gender', 'education' columns
+        - `sdmt_raw`: subset of input data, 'sdmt' column
+        - `bvmt_raw`: subset of input data, 'bvmt' column
+        - `cvlt_raw`: subset of input data, 'cvlt' column
+        - `columns`: columnnames of the input data
+        - `description`: description of the data
+
       - class `ConversionTable`: a look-up table that is used for the conversion from raw to scaled scores
 
         Attributes:
@@ -42,13 +54,6 @@ The project adopts the following file structure:
         - `bvmt`: bvmt conversion table
         - `cvlt`: cvlt conversion table
         - `description`: description of the structure of a conversion table
-
-      - class `ReferenceData`: A 100.000 element vector creating the normal distribution of the reference population.
-
-        Attributes:
-
-        - `data`: numpy array of length 100.000
-        - `description`: description of the data
 
    2. Functions (`functions.py`)
 
@@ -87,5 +92,5 @@ Please complete the following steps:
 
 3. Run the `BICAMS_script.py` file
 
-4. Extract the transformed data from the data folder: 'transformed_data.csv'
+4. Extract the transformed data from the data folder: 'transformed_data.csv'. Also checkout the description of what the output, 'transformed_data.csv', contains. It is located within the 'data_descriptions folder', and is called 'transformed_data_description.txt'
 
