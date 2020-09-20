@@ -7,7 +7,7 @@ class InputData:
 
         # Read relevant files
         data = pd.read_csv('data/data_to_transform.csv')
-        description = open('data_descriptions/mock_data_description.txt', 'r')
+        description = open('data_descriptions/data_to_transform_description.txt', 'r')
 
         # add age^2 column as second column to the data
         age_2 = data['age']**2
