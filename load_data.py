@@ -16,9 +16,7 @@ class InputData:
         # Create the attributes
         self.data_all = data
         self.demographics = data[['age','age^2','sex','education']]
-        self.sdmt_raw = data['sdmt_raw']
-        self.bvmt_raw = data['bvmt_raw']
-        self.cvlt_raw = data['cvlt_raw']
+        self.cognitive = data.drop(['age','age^2','sex','education'], axis=1)
         self.columns = data.columns
         self.description = description.read()
 
