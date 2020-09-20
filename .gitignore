@@ -1,8 +1,5 @@
 .DS_Store
 .idea/
-BPAD_virtual_env/
  __pycache__/
-Visualizations/
 data/
-sdmt_conversion_table.csv
-__pycache__/
+data_descriptions/
