@@ -27,9 +27,9 @@ class ConversionTable:
     def __init__(self):
 
         # Read relevant files
-        data_sdmt = pd.read_csv('data/sdmt_conversion_table.csv')
-        data_bvmt = pd.read_csv('data/bvmt_conversion_table.csv')
-        data_cvlt = pd.read_csv('data/cvlt_conversion_table.csv')
+        data_sdmt = pd.read_csv('data/conversion_tables/sdmt_conversion_table.csv')
+        data_bvmt = pd.read_csv('data/conversion_tables/bvmt_conversion_table.csv')
+        data_cvlt = pd.read_csv('data/conversion_tables/cvlt_conversion_table.csv')
         description = open('data_descriptions/conversion_table_description.txt')
 
         # Create the attributes
