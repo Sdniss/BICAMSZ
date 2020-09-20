@@ -1,6 +1,6 @@
  
 
-# BICAMS regression-based norms
+# BICAMS normalization visualization
 
 ## Introduction - AIMS VUB
 
@@ -20,18 +20,72 @@ The regression-based norms allow a raw score on any of the 3 cognitive tests sta
 - Gender
 - Educational status
 
-In short, by correcting for these 3 factors, the resulting z-score can be compared to cognitive scores without interference by them. In the following section, we explain the code that performs exactly this transformation.
+In short, by correcting for these 3 factors, the resulting z-score can be compared to cognitive scores without interference by them. In the "Repo explanation" section, we explain the code that performs exactly this transformation.
+
+## Deliverables
+
+With this code, you can easily transform cognitive scores on BICAMS to z-scores by following the steps listed in "How to run it + dependencies". A dataframe will be returned that you can subsequently use for your projects.
 
 ## Repo explanation
 
-1. Class `Database` from mock_data.py: 
-   1. `description`: if you `print` this attribute, it gives a description of the mock data that you can use to test the code.
-   2. `data`: contains the actual mock data.
+The project adopts the following file structure:
 
-2. Class `Functions` from functions.py
-   1. `function 1`
-   2. `function 2`
-   3. `function 3`
+1. BICAMS_application.py: the main script that runs the application using streamlit. It depends on the following elements:
 
+   1. Data (`load_data.py`). Location of the data and description in the "data" and "data_descriptions" folder respectively.
 
+      - class `ConversionTable`: a look-up table that is used for the conversion from raw to scaled scores
+
+        Attributes:
+
+        - `sdmt`: sdmt conversion table
+        - `bvmt`: bvmt conversion table
+        - `cvlt`: cvlt conversion table
+        - `description`: description of the structure of a conversion table
+
+      - class `ReferenceData`: A 100.000 element vector creating the normal distribution of the reference population.
+
+        Attributes:
+
+        - `data`: numpy array of length 100.000
+        - `description`: description of the data
+
+   2. Functions (`functions.py`)
+
+      - `normalization_pipeline` is the mother function that combines all other functions to do the normalization
+      - `get_expected_score` generates an expected cognitive score
+      - `raw_to_scaled` converts raw value to scaled value
+      - `to_z_score` turns the expected and scaled score to a z-score
+      - `impaired_or_not` declares whether the z-score is impaired or not
+
+## How to run it + dependencies
+
+### Dependencies: 
+
+First, the following libraries need to be installed within the environment you are working in.
+
+- Pandas
+- Numpy
+- Seaborn
+- Matplotlib
+
+### How to run it
+
+Please complete the following steps:
+
+1. Prepare your dataframe to meet the following requirements:
+
+   - Filename: 'data_to_transform.csv'
+
+   - Column headers: 'age', 'sex', 'ecucation', 'sdmt_raw', 'bvmt_raw','cvlt_raw'
+
+     Note 1: please use exactly these column names in this order
+
+     Note 2: only the 3 first columns are an absolute requirement. For the cognitive scores, please prepare your dataframe to only contain columns for which you have data. Hence, this can be a subset of the latter 3 columns, but should at least include one of them
+
+2. Upload your file to the 'data' directory. It will replace the 'data_to_transform.csv' that is currently there, and which is just mock data included by default
+
+3. Run the `BICAMS_script.py` file
+
+4. Extract the transformed data from the data folder: 'transformed_data.csv'
 
