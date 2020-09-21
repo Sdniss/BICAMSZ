@@ -15,10 +15,11 @@ This project is an extension to the paper of [Costers et al. 2017](https://doi.o
 The regression-based norms allow a raw score on any of the 3 cognitive tests stated above to be converted to a score that is corrected for three factors that were found in the paper to impact cognitive performance:
 
 - Age
+- Age^2
 - Gender
 - Educational status
 
-In short, by correcting for these 3 factors, the resulting z-score can be compared to cognitive scores without interference by them. In the "Repo explanation" section, we explain the code that performs exactly this transformation.
+In short, by correcting for these 4 factors, the resulting z-score can be compared to cognitive scores without interference by them. In the "Repo explanation" section, we explain the code that performs exactly this transformation.
 
 ## Deliverables
 
@@ -28,7 +29,7 @@ With this code, you can easily transform cognitive scores on BICAMS to z-scores 
 
 The project adopts the following file structure:
 
-1. BICAMS_application.py: the main script that runs the application using streamlit. It depends on the following elements:
+1. BICAMS_application.py: the main script that performs the transformation. It depends on the following elements:
 
    1. Data (`load_data.py`). Location of the data and description in the "data" and "data_descriptions" folder respectively.
 
@@ -38,25 +39,24 @@ The project adopts the following file structure:
 
         - `data_all`: all input data
         - `demographics`: subset of input data, 'age', 'gender', 'education' columns
-        - `sdmt_raw`: subset of input data, 'sdmt' column
-        - `bvmt_raw`: subset of input data, 'bvmt' column
-        - `cvlt_raw`: subset of input data, 'cvlt' column
+        - `sdmt`: subset of input data, 'sdmt' column
+        - `bvmt`: subset of input data, 'bvmt' column
+        - `cvlt`: subset of input data, 'cvlt' column
         - `columns`: columnnames of the input data
         - `description`: description of the data
         
-
-      - class `ConversionTable`: a look-up table that is used for the conversion from raw to scaled scores
-
-        Attributes:
-
-        - `sdmt`: sdmt conversion table
+- class `ConversionTable`: a look-up table that is used for the conversion from raw to scaled scores
+      
+  Attributes:
+      
+  - `sdmt`: sdmt conversion table
         - `bvmt`: bvmt conversion table
         - `cvlt`: cvlt conversion table
         - `description`: description of the structure of a conversion table
-
-   2. Functions (`functions.py`)
-
-      - `normalization_pipeline` is the mother function that combines all other functions to do the normalization
+      
+2. Functions (`functions.py`)
+   
+   - `normalization_pipeline` is the mother function that combines all other functions to do the normalization
       - `get_expected_score` generates an expected cognitive score
       - `raw_to_scaled` converts raw value to scaled value
       - `to_z_score` turns the expected and scaled score to a z-score
@@ -81,7 +81,7 @@ Please complete the following steps:
 
    - Filename: 'data_to_transform.csv'
 
-   - Column headers: 'age', 'sex', 'ecucation', 'sdmt_raw', 'bvmt_raw','cvlt_raw'
+   - Column headers: 'age', 'sex', 'ecucation', 'sdmt', 'bvmt','cvlt'
 
      Note 1: please use exactly these column names in this order
 
