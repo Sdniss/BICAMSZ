@@ -20,7 +20,7 @@ class InputData:
         self.columns = data.columns
         self.description = description.read()
 
-
+        
 class ConversionTable:
     def __init__(self):
 

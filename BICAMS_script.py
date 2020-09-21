@@ -4,7 +4,7 @@ from functions import normalization_pipeline
 import pandas as pd
 
 # region Load data
-# Load the mock data
+# Load the data (either mock data or your data)
 input_data = InputData().data_all
 demographics = InputData().demographics
 cognitive_raw = InputData().cognitive
@@ -69,7 +69,7 @@ transform_matrix = pd.DataFrame(data=transform_matrix,
 # Concatenate original data with the z-scores and impairment boolean columns
 transformed_data = pd.concat([input_data, transform_matrix], axis = 1)
 
-# Save the richto data folder
+# Save the total dataframe to data folder
 transformed_data.to_csv('data/transformed_data.csv', index=False)
 
 print(transformed_data)

@@ -3,3 +3,5 @@
 __pycache__/
 data/
 data_descriptions/
+BICAMS_script.ipynb
+/.ipynb_checkpoints/

@@ -1,6 +1,4 @@
- 
-
-# BICAMS normalization visualization
+# BICAMS z-normalization
 
 ## Introduction - AIMS VUB
 
@@ -45,6 +43,7 @@ The project adopts the following file structure:
         - `cvlt_raw`: subset of input data, 'cvlt' column
         - `columns`: columnnames of the input data
         - `description`: description of the data
+        
 
       - class `ConversionTable`: a look-up table that is used for the conversion from raw to scaled scores
 
@@ -90,7 +89,7 @@ Please complete the following steps:
 
 2. Upload your file to the 'data' directory. It will replace the 'data_to_transform.csv' that is currently there, and which is just mock data included by default
 
-3. Run the `BICAMS_script.py` file
+3. Run either the `BICAMS_script.py` file or the `BICAMS_script.ipynb` file if you are a jupyter notebook user
 
 4. Extract the transformed data from the data folder: 'transformed_data.csv'. Also checkout the description of what the output, 'transformed_data.csv', contains. It is located within the 'data_descriptions folder', and is called 'transformed_data_description.txt'
 
