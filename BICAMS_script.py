@@ -73,4 +73,4 @@ transformed_data = pd.concat([input_data, transform_matrix], axis = 1)
 transformed_data.to_csv('data/transformed_data.csv', index=False)
 
 print(transformed_data)
-print(cognitive_raw)
+print(transformed_data)
