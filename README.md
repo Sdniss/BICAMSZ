@@ -50,9 +50,9 @@ The project adopts the following file structure:
   Attributes:
       
   - `sdmt`: sdmt conversion table
-        - `bvmt`: bvmt conversion table
-        - `cvlt`: cvlt conversion table
-        - `description`: description of the structure of a conversion table
+  - `bvmt`: bvmt conversion table
+  - `cvlt`: cvlt conversion table
+  - `description`: description of the structure of a conversion table
       
 2. Functions (`functions.py`)
    
