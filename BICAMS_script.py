@@ -2,6 +2,10 @@ from load_data import InputData
 from load_data import ConversionTable
 from functions import normalization_pipeline
 import pandas as pd
+import os
+
+# Install dependencies
+os.system('pip3 install -r dependencies.txt')
 
 # region Load data
 # Load the data (either mock data or your data)

@@ -66,7 +66,7 @@ The project adopts the following file structure:
 
 ### Dependencies: 
 
-First, the following libraries need to be installed within the environment you are working in.
+First, the following libraries will be installed within the environment you are working in, if they are not installed already.
 
 - Pandas
 - Numpy
