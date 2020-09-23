@@ -15,7 +15,6 @@ This project is an extension to the paper of [Costers et al. 2017](https://doi.o
 The regression-based norms allow a raw score on any of the 3 cognitive tests stated above to be converted to a score that is corrected for three factors that were found in the paper to impact cognitive performance:
 
 - Age
-- Age^2
 - Gender
 - Educational status
 
