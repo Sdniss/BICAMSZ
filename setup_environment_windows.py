@@ -3,7 +3,7 @@ import os
 os.system('python3 -m venv BICAMS_norm_venv')
 
 # Activate the virtual environment
-os.system('source BICAMS_norm_venv/bin/activate')
+os.system('BICAMS_norm_venv\Scripts\activate')
 
 # Install all dependencies
 os.system('pip3 install -r dependencies.txt')
