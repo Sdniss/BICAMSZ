@@ -64,6 +64,8 @@ The project adopts the following file structure:
 
 ## Set up the environment + run the main script
 
+General: Make sure to have any version of python 3 installed on your computer
+
 ### Clone the repository to your local computer
 
 Please open a terminal window in a folder that will subsequently contain the GitHub repo after running following command: `git clone https://github.com/Sdniss/BICAMS_normalization`. Subsequently, type `cd BICAMS_normalization` to enter that folder in the terminal.
