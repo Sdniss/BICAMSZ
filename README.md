@@ -93,7 +93,7 @@ To perform the calculations for z-scores and impairment per domain, complete the
 
 2. Upload your file to the `data` directory. It will replace the `data_to_transform.csv` that is currently there, and which is just mock data included by default
 
-3. Run either the `BICAMS_script.py` file or the `BICAMS_script.ipynb` file if you are a jupyter notebook user
+3. Run either `python BICAMS_script.py` or open jupyter notebook and use `BICAMS_script.ipynb`  if you are a jupyter notebook user
 
 4. Extract the transformed data from the data folder: `transformed_data.csv`. Also checkout the description of what the output, `transformed_data.csv`, contains. It is located within the `data_descriptions folder`, and is called `transformed_data_description.txt`
 
