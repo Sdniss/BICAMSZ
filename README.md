@@ -71,7 +71,7 @@ Please open a terminal window in a folder that will subsequently contain the Git
 
 ### Environment set-up: 
 
-To be able to run the eventual script, we first have to set up the environment containing the correct dependencies that the code relies on. By running `python setup_environment.py`, a virtual environment called `BICAMS_app_venv` is created within your local repository and subsequently enriched with the dependencies that are listed in `dependencies.txt`.
+To be able to run the eventual script, we first have to set up the environment containing the correct dependencies that the code relies on. By running `python setup_environment.py`, a virtual environment called `BICAMS_norm_venv` is created within your local repository and subsequently enriched with the dependencies that are listed in `dependencies.txt`.
 
 ### Preparation and running the main script
 
