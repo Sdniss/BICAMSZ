@@ -64,13 +64,15 @@ The project adopts the following file structure:
 
 ## Set up the environment + run the main script
 
-For all steps below, please open a terminal window and navigate to the local repository to which you pulled the remote GitHub repo.
+### Clone the repository to your local computer
+
+Please open a terminal window in a folder that will subsequently contain the GitHub repo after running following command: `git clone https://github.com/Sdniss/BICAMS_normalization`. Subsequently, type `cd BICAMS_normalization` to enter that folder in the terminal.
 
 ### Environment set-up: 
 
 To be able to run the eventual script, we first have to set up the environment containing the correct dependencies that the code relies on. By running `python setup_environment.py`, a virtual environment called `BICAMS_app_venv` is created within your local repository and subsequently enriched with the dependencies that are listed in `dependencies.txt`.
 
-### Run the main script
+### Preparation and running the main script
 
 To perform the calculations for z-scores and impairment per domain, complete the following steps:
 
