@@ -29,7 +29,7 @@ With this code, you can easily transform cognitive scores on BICAMS to z-scores 
 
 The project adopts the following file structure:
 
-1. BICAMS_application.py: the main script that performs the transformation. It depends on the following elements:
+1. `BICAMS_application.py`: the main script that performs the transformation. It depends on the following elements:
 
    1. Data (`load_data.py`). Location of the data and description in the "data" and "data_descriptions" folder respectively.
 
@@ -53,43 +53,40 @@ The project adopts the following file structure:
   - `bvmt`: bvmt conversion table
   - `cvlt`: cvlt conversion table
   - `description`: description of the structure of a conversion table
-      
+    
 2. Functions (`functions.py`)
    
-   - `normalization_pipeline` is the mother function that combines all other functions to do the normalization
+   - `normalization_pipeline` is the mother function that combines all other functions to do the normalization:
       - `get_expected_score` generates an expected cognitive score
       - `raw_to_scaled` converts raw value to scaled value
       - `to_z_score` turns the expected and scaled score to a z-score
       - `impaired_or_not` declares whether the z-score is impaired or not
 
-## How to run it + dependencies
+## Set up the environment + run the main script
 
-### Dependencies: 
+For all steps below, please open a terminal window and navigate to the local repository to which you pulled the remote GitHub repo.
 
-First, the following libraries will be installed within the environment you are working in, if they are not installed already.
+### Environment set-up: 
 
-- Pandas
-- Numpy
-- Seaborn
-- Matplotlib
+To be able to run the eventual script, we first have to set up the environment containing the correct dependencies that the code relies on. By running `python setup_environment.py`, a virtual environment called `BICAMS_app_venv` is created within your local repository and subsequently enriched with the dependencies that are listed in `dependencies.txt`.
 
-### How to run it
+### Run the main script
 
-Please complete the following steps:
+To perform the calculations for z-scores and impairment per domain, complete the following steps:
 
 1. Prepare your dataframe to meet the following requirements:
 
-   - Filename: 'data_to_transform.csv'
+   - Filename: `data_to_transform.csv`
 
-   - Column headers: 'age', 'sex', 'ecucation', 'sdmt', 'bvmt','cvlt'
+   - Column headers: `age`, `sex`, `ecucation`, `sdmt`, `bvmt`, `cvlt`
 
      Note 1: please use exactly these column names in this order
 
      Note 2: only the 3 first columns are an absolute requirement. For the cognitive scores, please prepare your dataframe to only contain columns for which you have data. Hence, this can be a subset of the latter 3 columns, but should at least include one of them
 
-2. Upload your file to the 'data' directory. It will replace the 'data_to_transform.csv' that is currently there, and which is just mock data included by default
+2. Upload your file to the `data` directory. It will replace the `data_to_transform.csv` that is currently there, and which is just mock data included by default
 
 3. Run either the `BICAMS_script.py` file or the `BICAMS_script.ipynb` file if you are a jupyter notebook user
 
-4. Extract the transformed data from the data folder: 'transformed_data.csv'. Also checkout the description of what the output, 'transformed_data.csv', contains. It is located within the 'data_descriptions folder', and is called 'transformed_data_description.txt'
+4. Extract the transformed data from the data folder: `transformed_data.csv`. Also checkout the description of what the output, `transformed_data.csv`, contains. It is located within the `data_descriptions folder`, and is called `transformed_data_description.txt`
 
