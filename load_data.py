@@ -6,8 +6,20 @@ class InputData:
     def __init__(self):
 
         # Read relevant files
-        data = pd.read_excel('data/data_to_transform.xlsx')
+        data = pd.read_excel('data/test_data.xlsx')
         description = open('data_descriptions/data_to_transform_description.txt', 'r')
+
+        # region Perform checks if the data was correctly entered
+        # column names
+        if not set(data.columns).issubset({'age', 'sex', 'education', 'sdmt', 'bvmt', 'cvlt'}):
+            raise ValueError('Please be sure to use the correct column names and that they are lower case')
+        # sex
+        if data['sex'].unique().sum() != 3:  # Assure that 1's and 2's were passed for male and female respectively
+            raise ValueError('Please assure the following encoding: Male = 1, Female = 2')
+        # education
+        if not set(data['education']).issubset({6, 12, 13, 15, 17, 21}):
+            raise ValueError('Please use education levels that are encoded as 6, 12, 13, 15, 17 or 21 years')
+        # endregion
 
         # add age^2 column as second column to the data
         age_2 = data['age']**2

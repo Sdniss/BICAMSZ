@@ -91,9 +91,14 @@ To perform the calculations for z-scores and impairment per domain, complete the
 
      Note 2: only the 3 first columns are an absolute requirement. For the cognitive scores, please prepare your dataframe to only contain columns for which you have data. Hence, this can be a subset of the latter 3 columns, but should at least include one of them
 
+    - Data:
+        - age: years
+        - sex: 1 = Male, 2 = Female
+        - education: 6,12,13,15,17,21 years of education
+        - sdmt/bvmt/cvlt: raw score on the test 
+    
 2. Upload your file to the `data` directory. It will replace the `data_to_transform.csv` that is currently there, and which is just mock data included by default
 
 3. Run either `python BICAMS_script.py` or open jupyter notebook and use `BICAMS_script.ipynb`  if you are a jupyter notebook user
 
 4. Extract the transformed data from the data folder: `transformed_data.xlsx`. Also checkout the description of what the output, `transformed_data.csv`, contains. It is located within the `data_descriptions folder`, and is called `transformed_data_description.txt`
-
