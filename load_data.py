@@ -6,7 +6,7 @@ class InputData:
     def __init__(self):
 
         # Read relevant files
-        data = pd.read_csv('data/data_to_transform.csv')
+        data = pd.read_excel('data/data_to_transform.xlsx')
         description = open('data_descriptions/data_to_transform_description.txt', 'r')
 
         # add age^2 column as second column to the data

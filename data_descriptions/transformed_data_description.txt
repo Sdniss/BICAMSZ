@@ -1,6 +1,6 @@
-------------------------------------------------
-Output data (tranformed): 'transformed_data.csv'
-------------------------------------------------
+-------------------------------------------------
+Output data (tranformed): 'transformed_data.xlsx'
+-------------------------------------------------
 Data description:
 
 demographics:

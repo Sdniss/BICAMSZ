@@ -65,7 +65,7 @@ transform_matrix = pd.DataFrame(data=transform_matrix,
 transformed_data = pd.concat([input_data, transform_matrix], axis = 1)
 
 # Save the total dataframe to data folder
-transformed_data.to_csv('data/transformed_data.csv', index=False)
+transformed_data.to_excel('data/transformed_data.xlsx')
 
 # Print first 5 columns of dataframe
 print(transformed_data.head())

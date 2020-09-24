@@ -83,7 +83,7 @@ To perform the calculations for z-scores and impairment per domain, complete the
 
 1. Prepare your dataframe to meet the following requirements:
 
-   - Filename: `data_to_transform.csv`
+   - Filename: `data_to_transform.xlsx` (excel file)
 
    - Column headers: `age`, `sex`, `ecucation`, `sdmt`, `bvmt`, `cvlt`
 
@@ -95,5 +95,5 @@ To perform the calculations for z-scores and impairment per domain, complete the
 
 3. Run either `python BICAMS_script.py` or open jupyter notebook and use `BICAMS_script.ipynb`  if you are a jupyter notebook user
 
-4. Extract the transformed data from the data folder: `transformed_data.csv`. Also checkout the description of what the output, `transformed_data.csv`, contains. It is located within the `data_descriptions folder`, and is called `transformed_data_description.txt`
+4. Extract the transformed data from the data folder: `transformed_data.xlsx`. Also checkout the description of what the output, `transformed_data.csv`, contains. It is located within the `data_descriptions folder`, and is called `transformed_data_description.txt`
 
