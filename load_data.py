@@ -6,7 +6,7 @@ class InputData:
     def __init__(self):
 
         # Read relevant files
-        data = pd.read_excel('data/test_data.xlsx')
+        data = pd.read_excel('data/data_to_transform.xlsx')
         description = open('data_descriptions/data_to_transform_description.txt', 'r')
 
         # region Perform checks if the data was correctly entered
