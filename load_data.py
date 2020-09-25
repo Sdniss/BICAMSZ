@@ -24,8 +24,8 @@ class InputData:
                               'sex': {1,2},
                               'education': {6,12,13,15,17,21},
                               'sdmt': set(range(0,111)),
-                              'bvmt': set(range(0,36)),
-                              'cvlt': set(range(0,80))}
+                              'bvmt': set(range(0,37)),
+                              'cvlt': set(range(0,81))}
 
         for key in error_dict.keys():
             # Extract the data vector for a specific key
