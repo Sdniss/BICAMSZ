@@ -12,7 +12,7 @@ class InputData:
         # region Perform checks if the data was correctly entered
 
         error_dict = {'columns': 'Please be sure to use the correct column names and that they are lower case',
-                      'age': 'Please use age values between 0 and 125 years',
+                      'age': 'Please use age values between 0 and 125 years, and only use integer values',
                       'sex': 'Please assure the following encoding: Male = 1, Female = 2',
                       'education': 'Please use education levels that are encoded as 6, 12, 13, 15, 17 or 21 years',
                       'sdmt': 'Please use sdmt values between 0 and 110',
