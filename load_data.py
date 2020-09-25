@@ -27,7 +27,7 @@ class InputData:
                               'bvmt': set(range(0,37)),
                               'cvlt': set(range(0,81))}
 
-        for key in error_dict.keys():
+        for key in ['columns'] + list(data.columns):
             # Extract the data vector for a specific key
             if key == 'columns':
                 input_vector = set(data.columns)
