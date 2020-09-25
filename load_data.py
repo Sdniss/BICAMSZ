@@ -10,15 +10,33 @@ class InputData:
         description = open('data_descriptions/data_to_transform_description.txt', 'r')
 
         # region Perform checks if the data was correctly entered
-        # column names
-        if not set(data.columns).issubset({'age', 'sex', 'education', 'sdmt', 'bvmt', 'cvlt'}):
-            raise ValueError('Please be sure to use the correct column names and that they are lower case')
-        # sex
-        if data['sex'].unique().sum() != 3:  # Assure that 1's and 2's were passed for male and female respectively
-            raise ValueError('Please assure the following encoding: Male = 1, Female = 2')
-        # education
-        if not set(data['education']).issubset({6, 12, 13, 15, 17, 21}):
-            raise ValueError('Please use education levels that are encoded as 6, 12, 13, 15, 17 or 21 years')
+
+        error_dict = {'columns': 'Please be sure to use the correct column names and that they are lower case',
+                      'age': 'Please use age values between 0 and 125 years',
+                      'sex': 'Please assure the following encoding: Male = 1, Female = 2',
+                      'education': 'Please use education levels that are encoded as 6, 12, 13, 15, 17 or 21 years',
+                      'sdmt': 'Please use sdmt values between 0 and 110',
+                      'bvmt': 'Please use bvmt values between 0 and 36',
+                      'cvlt': 'Please use cvlt values between 0 and 80'}
+
+        allowed_range_dict = {'columns': {'age', 'sex', 'education', 'sdmt', 'bvmt', 'cvlt'},
+                              'age': set(range(0,126)),
+                              'sex': {1,2},
+                              'education': {6,12,13,15,17,21},
+                              'sdmt': set(range(0,111)),
+                              'bvmt': set(range(0,36)),
+                              'cvlt': set(range(0,80))}
+
+        for key in error_dict.keys():
+            # Extract the data vector for a specific key
+            if key == 'columns':
+                input_vector = set(data.columns)
+            else:
+                input_vector = set(data[key])
+            # Check whether the vector is within the allowed range
+            if not input_vector.issubset(allowed_range_dict.get(key)):
+                raise ValueError(error_dict.get(key))
+
         # endregion
 
         # add age^2 column as second column to the data
