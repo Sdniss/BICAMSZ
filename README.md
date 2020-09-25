@@ -38,8 +38,6 @@ With this code, you can easily transform cognitive scores on BICAMS to z-scores 
 
 ## Repo explanation
 
-The `setup_environment` files per operating systems create and activate a virtual environment that contains the dependencies (`dependencies.txt`) for this project.
-
 `BICAMS_application.py`: the main script that performs the transformation (jupyter notebook version: `BICAMS_application.ipynb`). It depends on the following elements:
 
 1. Data (`load_data.py`). Location of the data and description in the "data" and "data_descriptions" folder respectively.
@@ -83,11 +81,13 @@ Please open a terminal window in a folder that will subsequently contain the Git
 
 ### Environment set-up: 
 
-To be able to run the eventual script, we first have to set up the environment containing the correct dependencies that the code relies on. Please pick one of the commands stated below, according to the operating system of your local computer. By running the command, a virtual environment called `BICAMS_norm_venv` is created within your local repository and subsequently enriched with the dependencies that are listed in `dependencies.txt`.
+To be able to run the main script, we first have to set up the environment containing the correct dependencies that the code relies on. In the table below, please pick the column that accords with the operating system you are using and run the commands in the terminal. Under the `explanation` column, you can keep track of what operation is performed with the corresponding command.
 
-- Mac: `python setup_environment_mac.py`
-- Windows: `python setup_environment_windows.py`
-- Linux: `python setup_environment_linux.py`
+| Step | Explanation                                                  | Mac                                    | Windows                             | Linux                                  |
+| ---- | ------------------------------------------------------------ | -------------------------------------- | ----------------------------------- | -------------------------------------- |
+| 1    | Create a virtual environment (`BICAMS_norm_venv`) within your local repository | `python3 -m venv BICAMS_norm_venv`     | `python3 -m venv BICAMS_norm_venv`  | `python3 -m venv BICAMS_norm_venv`     |
+| 2    | Activate the virtual environment                             | `source BICAMS_norm_venv/bin/activate` | `BICAMS_norm_venv\Scripts\activate` | `source BICAMS_norm_venv/bin/activate` |
+| 3    | Install all dependencies (`dependencies.txt`) within the virtual environment | `pip3 install -r dependencies.txt`     | `pip3 install -r dependencies.txt`  | `pip3 install -r dependencies.txt`     |
 
 ### Prepare the dataframe
 
