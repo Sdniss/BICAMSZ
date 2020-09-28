@@ -36,50 +36,15 @@ Furthermore, testing conditions for this paper were very strict. E.g. for the SD
 
 With this code, you can easily transform cognitive scores on BICAMS to z-scores by following the steps listed in the [Set up the environment + run the main script](#set-up-the-environment--run-the-main-script). A dataframe will be returned that you can subsequently use for your projects.
 
-## Repo explanation
-
-`BICAMS_application.py`: the main script that performs the transformation (jupyter notebook version: `BICAMS_application.ipynb`). It depends on the following elements:
-
-1. Data (`load_data.py`). Location of the data and description in the "data" and "data_descriptions" folder respectively.
-
-   - class `InputData`: the input data to be transformed
-
-     Attributes:
-
-     - `data_all`: all input data
-     - `demographics`: subset of input data, 'age', 'gender', 'education' columns
-     - `sdmt`: subset of input data, 'sdmt' column
-     - `bvmt`: subset of input data, 'bvmt' column
-     - `cvlt`: subset of input data, 'cvlt' column
-     - `columns`: columnnames of the input data
-     - `description`: description of the data
-     
-   - class `ConversionTable`: a look-up table that is used for the conversion from raw to scaled scores
-   
-     Attributes:
-   
-     - `sdmt`: sdmt conversion table
-     - `bvmt`: bvmt conversion table
-     - `cvlt`: cvlt conversion table
-     - `description`: description of the structure of a conversion table
-   
-2. Functions (`functions.py`)
-
-   - `normalization_pipeline` is the mother function that combines all other functions to do the normalization:
-      - `get_expected_score` generates an expected cognitive score
-      - `raw_to_scaled` converts raw value to scaled value
-      - `to_z_score` turns the expected and scaled score to a z-score
-      - `impaired_or_not` declares whether the z-score is impaired or not
-
 ## Set up the environment + run the main script
 
 General: Make sure to have any version of python 3 installed on your computer
 
-### Clone the repository to your local computer
+### 1. Clone the repository to your local computer
 
 Please open a terminal window in a folder that will subsequently contain the GitHub repo after running following command: `git clone https://github.com/Sdniss/BICAMS_normalization`. Subsequently, type `cd BICAMS_normalization` to enter that folder in the terminal.
 
-### Environment set-up: 
+### 2. Environment set-up: 
 
 To be able to run the main script, we first have to set up the environment containing the correct dependencies that the code relies on. In the table below, please pick the column that accords with the operating system you are using and run the commands in the terminal. Under the `explanation` column, you can keep track of what operation is performed with the corresponding command.
 
@@ -89,7 +54,7 @@ To be able to run the main script, we first have to set up the environment conta
 | 2    | Activate the virtual environment                             | `source BICAMS_norm_venv/bin/activate` | `BICAMS_norm_venv\Scripts\activate` | `source BICAMS_norm_venv/bin/activate` |
 | 3    | Install all dependencies (`dependencies.txt`) within the virtual environment | `pip3 install -r dependencies.txt`     | `pip3 install -r dependencies.txt`  | `pip3 install -r dependencies.txt`     |
 
-### Prepare the dataframe
+### 3. Prepare the dataframe
 
 To perform the calculations for z-scores and impairment per domain, complete the following steps:
 
@@ -111,10 +76,10 @@ To perform the calculations for z-scores and impairment per domain, complete the
    
 2. Upload your file to the `data` directory. It will replace the `data_to_transform.xlsx` that is currently there, and which is just mock data included by default
 
-### Run the main script
+### 4. Run the main script
 
 Run either `python BICAMS_script.py` or open jupyter notebook and use `BICAMS_script.ipynb`  if you are a jupyter notebook user
 
-### Extract the resulting dataframe
+### 5. Extract the resulting dataframe
 
 Extract the transformed data from the `data` folder: `transformed_data.xlsx`. Also checkout the description of what the output, `transformed_data.xlsx`, contains. It is located within the `data_descriptions` folder, and is called `transformed_data_description.txt`
