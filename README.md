@@ -20,7 +20,7 @@ The regression-based norms allow a raw score on any of the 3 cognitive tests sta
 - Sex
 - Educational status
 
-In short, by correcting for these 4 factors, the resulting z-score can be compared to cognitive scores without interference by them. In the [Repo explanation](#repo-explanation) section, we explain the code that performs exactly this transformation. 3 important phases can be distinguished:
+In short, by correcting for these factors, the resulting z-score can be compared to cognitive scores without interference by them. 3 important phases can be distinguished:
 
 1. Scaling of the raw scores
 2. Predicting which score should normally be obtained by the subject according to their age, sex and education level. 
