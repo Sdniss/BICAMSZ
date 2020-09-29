@@ -1,0 +1,22 @@
+------------------------------------------------------
+Input data to be transformed: 'data_to_transform.xlsx'
+------------------------------------------------------
+Required format of the input data:
+
+The input data 'data_to_transform.csv' should contain the following features and data types:
+- age: int, age in years
+- sex: int
+    - 1: Male
+    - 2: Female
+- education: int, amount of years education
+    - 6 years: Finished primary school
+    - 12 years: Finished high school
+    - 13 years: Professional education
+    - 15 years: BSc
+    - 17 years: MSc
+    - 21 years: PhD
+
+Furthermore, the following features are optional (but at least 1 required):
+- sdmt: int, raw sdmt score to be normalised
+- bvmt: int, raw bvmt score to be normalised
+- cvlt: int, raw cvlt score to be normalised
