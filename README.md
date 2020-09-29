@@ -69,9 +69,17 @@ To perform the calculations for z-scores and impairment per domain, complete the
      Note 2: only the 3 first columns are an absolute requirement. For the cognitive scores, please prepare your dataframe to only contain columns for which you have data. Hence, this can be a subset of the latter 3 columns, but should at least include one of them
 
    - Data:
-     - age: years
-     - sex: 1 = Male, 2 = Female
-     - education: 6,12,13,15,17,21 years of education
+     - age: years (integer)
+     - sex: 
+       - 1 = Male
+       - 2 = Female
+     - education (years of education): 
+       - 6  = Primary school
+       - 12 = High school 
+       - 13 = Professional education 
+       - 15 = Bachelor 
+       - 17 = Master 
+       - 21 = Doctorate
      - sdmt/bvmt/cvlt: raw score on the test
    
 2. Upload your file to the `data` directory. It will replace the `data_to_transform.xlsx` that is currently there, and which is just mock data included by default
