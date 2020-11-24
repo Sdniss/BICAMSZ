@@ -1,5 +1,4 @@
 # BICAMSZ: a package for z-transformation of BICAMS
-magic command: `pip install BICAMSZ`
 
 ## Table of contents
 1. [About the creators](#aims---vub)
@@ -19,7 +18,7 @@ First of all, thank you very much for your interest in using our project on beha
 This project is based on [Costers et al. 2017](https://www.msard-journal.com/article/S2211-0348(17)30202-X/fulltext). \
 To understand the transformation, please visit our [streamlit application](https://share.streamlit.io/sdniss/bicams_web_application/BICAMS_application.py)!
 
-In short, transforming test scores to z-scores by correcting for age, gender and education allows comparison of cognitive scores between subjects. The following phases can be distinguished:
+In short, transforming test scores to z-scores by correcting for age, sex and education allows comparison of cognitive scores between subjects. The following phases can be distinguished:
 1. Scaling of the raw scores
 2. Predicting which score should normally be obtained by the subject according to their age, sex and education level. 
 3. Obtain z-score: subtract the predicted score (2) from the scaled score (1), and divide by the residual error of the regression model
@@ -48,26 +47,31 @@ The following data is an absolute requirement:
     - 17 = Master 
     - 21 = Doctorate
 
-Furthermore, at least data on 1 of the 3 scores below:
+Furthermore, data on at least 1 of the 3 scores below is required:
 - sdmt: raw sdmt score
 - bvmt: raw bvmt score
 - cvlt: raw cvlt score
 
 ## Code explanation
 All code is present in `functions.py`
-- `data_check`: performs a check on your data for impossible values
+- `data_check`: performs a check on your data for impossible values, including NaNs. If problems are still present, the code will automatically throw warnings and return NaNs.
 - `normalization_pipeline`: entire pipeline. Uses the following internal functions:
+    - `_check_impossible_values_or_nans`
     - `_get_conversion_table`: more info below
     - `_get_expected_score`
     - `_raw_to_scaled`
     - `_to_z_score`
     - `_impaired_or_not`
-
-To load the two main functions: `from BICAMSZ import normalization_pipeline, data_check` \
+- `pipeline_for_pandas`: this allows the pipeline to be applied to a pandas dataframe with the `.apply()` function. Please use the following code snippets: 
+    1. `new_columns = ['z_test', 'imp_test']`: replace 'test' with the test you are converting
+    2. `input_columns = ['column_name_age', 'column_name_sex', 'column_name_edu', 'column_name_test']`: Adapt the names according to your columnnames.
+    3. `df[new_columns] = df[input_columns].apply(pipeline_for_pandas, args = (test, z_cutoff), axis = 1)`: replace `test` with the string 'sdmt', 'bvmt' or 'cvlt'. Also choose the cut-off.
+     
+To load the three main functions: `from BICAMSZ import normalization_pipeline, data_check, pipeline_for_pandas` \
 For info on these functions: please use `help(...function...)` to see the docstrings.
 
 Additional note on conversion tables, used by `_get_conversion_table`: \
-Every **conversion table** consists of the following columns:
+Every conversion table consists of the following columns:
 - scaled_score: Categorical variable, the scaled score that accords with a raw score within the following interval between lower and upper bound:
 - lower bound: lower bound of the raw score to yield a certain scaled score
 - upper bound: upper bound of the raw score to yield a certain scaled score

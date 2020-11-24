@@ -16,7 +16,8 @@ LONG_DESC_TYPE = "text/markdown"
 
 INSTALL_REQUIRES = [
       'numpy',
-      'pandas'
+      'pandas',
+      'warnings'
 ]
 
 setup(name=PACKAGE_NAME,
