@@ -16,7 +16,8 @@ magic command: `pip install BICAMSZ`
 First of all, thank you very much for your interest in using our project on behalf of the Artificial Intelligence and Modelling in clinical Sciences (AIMS) lab, part of the Vrije Universiteit Brussel (VUB). We aim to contribute maximally to optimal clinical care in neurodegenerative disorders, with a special focus on Multiple Sclerosis, by performing relevant and advanced modelling on neurophysiological and brain imaging data. Moreover, in light of the prosper of the field and general understanding of our research, we do efforts to contribute to open, reproducible and transparant science by sharing code and actively practicing science communication on our [AIMS website](https://aims.research.vub.be).
 
 ### The project
-For a thorough understanding, please visit our [streamlit application](https://share.streamlit.io/sdniss/bicams_web_application/BICAMS_application.py)!
+This project is based on [Costers et al. 2017](https://www.msard-journal.com/article/S2211-0348(17)30202-X/fulltext). \
+To understand the transformation, please visit our [streamlit application](https://share.streamlit.io/sdniss/bicams_web_application/BICAMS_application.py)!
 
 In short, transforming test scores to z-scores by correcting for age, gender and education allows comparison of cognitive scores between subjects. The following phases can be distinguished:
 1. Scaling of the raw scores
@@ -34,7 +35,7 @@ Furthermore, testing conditions for this paper were very strict. E.g. for the SD
 With this code, you can easily transform cognitive scores on BICAMS to z-scores.
 
 ## Required data
-All required:
+The following data is an absolute requirement:
 - age: years (integer)
 - sex: 
     - 1 = Male
@@ -46,7 +47,8 @@ All required:
     - 15 = Bachelor 
     - 17 = Master 
     - 21 = Doctorate
-One of the scores below:
+
+Furthermore, at least data on 1 of the 3 scores below:
 - sdmt: raw sdmt score
 - bvmt: raw bvmt score
 - cvlt: raw cvlt score
@@ -61,7 +63,10 @@ All code is present in `functions.py`
     - `_to_z_score`
     - `_impaired_or_not`
 
-`_get_conversion_table`:
+To load the two main functions: `from BICAMSZ import normalization_pipeline, data_check` \
+For info on these functions: please use `help(...function...)` to see the docstrings.
+
+Additional note on conversion tables, used by `_get_conversion_table`: \
 Every **conversion table** consists of the following columns:
 - scaled_score: Categorical variable, the scaled score that accords with a raw score within the following interval between lower and upper bound:
 - lower bound: lower bound of the raw score to yield a certain scaled score
