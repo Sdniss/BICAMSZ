@@ -91,17 +91,16 @@ def _check_impossible_values_or_nans(arguments_dict):
 
     for key, value in arguments_dict.items():
 
-        if key == 'test':  # stop after checking 'raw_score'
-            break
+        if key not in ['test', 'z_cutoff']:  # Don't check for value entries of 'test' or 'z_cutoff'
 
-        # Convert the key since we want the key of raw_score to be the test, so that it is e.g.: {'sdmt': 50}
-        if key == 'raw_score':
-            key = arguments_dict.get('test')
+            # Convert the key since we want the key of raw_score to be the test, so that it is e.g.: {'sdmt': 50}
+            if key == 'raw_score':
+                key = arguments_dict.get('test')
 
-        # Check whether the value is within the allowed ranges. If not, raise a warning
-        if value not in allowed_range_dict.get(key):
-            warnings.warn(error_dict.get(key))
-            problem_detected = True
+            # Check whether the value is within the allowed ranges. If not, raise a warning
+            if value not in allowed_range_dict.get(key):
+                warnings.warn(error_dict.get(key))
+                problem_detected = True
 
     return problem_detected
 

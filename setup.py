@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.2.1'
+VERSION = '0.2.2'
 PACKAGE_NAME = 'BICAMSZ'
 AUTHOR = 'Stijn Denissen'
 AUTHOR_EMAIL = 'stijndenissen94@gmail.com'
