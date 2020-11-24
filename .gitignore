@@ -3,3 +3,6 @@
 __pycache__/
 /.ipynb_checkpoints/
 BICAMSZ_venv
+build
+dist
+BICAMSZ.egg-info
