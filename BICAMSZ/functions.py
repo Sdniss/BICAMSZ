@@ -67,9 +67,9 @@ def _get_conversion_table(test):
     :return: dict, conversion table
     """
     # Read relevant files
-    sdmt_ct = pd.read_csv('conversion_tables/sdmt_conversion_table.csv')
-    bvmt_ct = pd.read_csv('conversion_tables/bvmt_conversion_table.csv')
-    cvlt_ct = pd.read_csv('conversion_tables/cvlt_conversion_table.csv')
+    sdmt_ct = pd.read_csv('BICAMSZ/conversion_tables/sdmt_conversion_table.csv')
+    bvmt_ct = pd.read_csv('BICAMSZ/conversion_tables/bvmt_conversion_table.csv')
+    cvlt_ct = pd.read_csv('BICAMSZ/conversion_tables/cvlt_conversion_table.csv')
 
     # Dictionary with the tests and the according conversion tables
     conversion_dict = {'sdmt': sdmt_ct,
