@@ -70,11 +70,34 @@ All code is present in `functions.py`
 To load the three main functions: `from BICAMSZ import normalization_pipeline, data_check, pipeline_for_pandas` \
 For info on these functions: please use `help(...function...)` to see the docstrings.
 
-Additional note on conversion tables, used by `_get_conversion_table`: \
-Every conversion table consists of the following columns:
-- scaled_score: Categorical variable, the scaled score that accords with a raw score within the following interval between lower and upper bound:
-- lower bound: lower bound of the raw score to yield a certain scaled score
-- upper bound: upper bound of the raw score to yield a certain scaled score
+Code examples:
+```
+from BICAMSZ import normalization_pipeline, data_check, pipeline_for_pandas
+import pandas as pd
 
-Thus: scaled_score accords with lower_bound <= raw_score <= upper_bound \
-Note: Also 'equal to' belongs to the interval between the lower and upper bounds!
+data_dict = {'age': [55,70,34,80],
+             'sex': [1,2,2,1],
+             'education': [17, 6, 13, 21],
+             'sdmt': [32, 49, 81, 70],
+             'bvmt': [25, 36, 30, 12],
+             'cvlt': [41, 22, 75, 60]}
+df = pd.DataFrame(data_dict)
+
+# 0. Check if your data is ready for conversion, per column. For example:
+data_check(df['sdmt'], 'sdmt')  
+
+# 1. Using normalization_pipeline per case
+z_score, impairment_bool = normalization_pipeline(70, 2, 13, 53, 'sdmt', -1.5)
+
+# 2. Using pipeline_for_pandas to immediately convert entire dataframe
+new_columns_sdmt = ['z_sdmt', 'imp_sdmt']
+new_columns_bvmt = ['z_bvmt', 'imp_bvmt']
+new_columns_cvlt = ['z_cvlt', 'imp_cvlt']
+input_columns_sdmt = ['age', 'sex', 'education', 'sdmt']
+input_columns_bvmt = ['age', 'sex', 'education', 'bvmt']
+input_columns_cvlt = ['age', 'sex', 'education', 'cvlt']
+
+df[new_columns_sdmt] = df[input_columns_sdmt].apply(pipeline_for_pandas, args=('sdmt', -1.5), axis=1)
+df[new_columns_bvmt] = df[input_columns_bvmt].apply(pipeline_for_pandas, args=('bvmt', -1.5), axis=1)
+df[new_columns_cvlt] = df[input_columns_cvlt].apply(pipeline_for_pandas, args=('cvlt', -1.5), axis=1)
+```
