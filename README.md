@@ -1,4 +1,4 @@
-# BICAMSZ: a package for z-transformation of BICAMS
+# BICAMSZ: a package for z-transformation of BICAMS for a Belgian (Dutch) population
 
 ## Table of contents
 1. [About the creators](#aims---vub)
