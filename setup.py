@@ -1,16 +1,20 @@
+"""
+Contains all setup information
+"""
+
 import pathlib
 from setuptools import setup, find_packages
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 PACKAGE_NAME = 'BICAMSZ'
 AUTHOR = 'Stijn Denissen'
 AUTHOR_EMAIL = 'stijndenissen94@gmail.com'
 URL = 'https://github.com/sdniss/BICAMSZ'
 
 LICENSE = 'MIT License'
-DESCRIPTION = 'Tools to convert BICAMS scores to z scores'
+DESCRIPTION = 'Tools to convert BICAMS scores to z scores in a Belgian (Dutch) population'
 LONG_DESCRIPTION = (HERE / "README.md").read_text()
 LONG_DESC_TYPE = "text/markdown"
 
