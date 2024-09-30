@@ -19,7 +19,7 @@ def data_check(array, key):
 
     allowed_range_dict = {'age': set(range(0, 126)),
                           'sex': {1, 2},
-                          'education': {range(0, 22)},
+                          'education': set(range(0, 22)),
                           'sdmt': set(range(0, 111)),
                           'bvmt': set(range(0, 37)),
                           'cvlt': set(range(0, 81))}
