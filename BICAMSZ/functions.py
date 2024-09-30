@@ -81,7 +81,7 @@ def _check_impossible_values_or_nans(arguments_dict):
 
     allowed_range_dict = {'age': range(0, 126),
                           'sex': [1, 2],
-                          'edu': [6, 12, 13, 15, 17, 21],
+                          'edu': range(0, 22),
                           'sdmt': range(0, 111),
                           'bvmt': range(0, 37),
                           'cvlt': range(0, 81)}
