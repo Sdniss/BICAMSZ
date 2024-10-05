@@ -191,10 +191,14 @@ def _impaired_or_not(z_score, cutoff):
     :param cutoff: the cut-off to decide impaired (<=) or preserved (>) on the cognitive domain
     :return: 1 if impaired, 0 if preserved
     """
-    if z_score <= cutoff:
+    if np.isnan(z_score):
+        return np.nan
+    elif z_score <= cutoff:
         return 1
-    else:
+    elif z_score > cutoff:
         return 0
+    else:
+        return ValueError(f'z-score type/value not understood: {z_score}')
 
 
 def pipeline_for_pandas(row, test, z_cutoff):
